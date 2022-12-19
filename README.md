@@ -15,6 +15,14 @@
 
 Formula Romberg pada umumnya adalah sebagai berikut:
 
+- Jika i = 1
+
+<img src="https://latex.codecogs.com/svg.image?R_(_i,_j_)=&space;CTR(H_i)" />
+
+
+
+
+- Jika i > 1
 ```math
 R(i,j<sub>n</sub>
 ```
