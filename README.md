@@ -15,14 +15,11 @@
 
 Formula Romberg pada umumnya adalah sebagai berikut:
 
-- Jika i = 1
+<img width="334" alt="image" src="https://user-images.githubusercontent.com/89933907/208550543-3e54606d-1e29-455b-9629-a931c807f794.png">
 
-<img src="https://latex.codecogs.com/svg.image?R_(_i,_j_)=&space;CTR(H_i)" />
-
-
-
-
-- Jika i > 1
+dengan 
 ```math
-R(i,j<sub>n</sub>
+h = (b-1)/(2^(i-1)
 ```
+
+dimana a dan b sebagai batasan dan i adalah indeks baris
