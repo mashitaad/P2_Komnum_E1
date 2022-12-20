@@ -19,7 +19,7 @@ Formula Romberg pada umumnya adalah sebagai berikut:
 
 dengan 
 ```math
-h = (b-1) /over (2^(^i-1)
+h = (b-1) /over (2^(i-1)^)
 ```
 
 dimana a dan b sebagai batasan dan i adalah indeks baris
