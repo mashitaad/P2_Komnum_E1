@@ -18,8 +18,6 @@ Formula Romberg pada umumnya adalah sebagai berikut:
 <img width="334" alt="image" src="https://user-images.githubusercontent.com/89933907/208550543-3e54606d-1e29-455b-9629-a931c807f794.png">
 
 dengan 
-$
-h = (b-1) /over (2^(i-1)^)
-$
+$$ h = (b-1) /over (2^(i-1)^) $$ 
 
 dimana a dan b sebagai batasan dan i adalah indeks baris
