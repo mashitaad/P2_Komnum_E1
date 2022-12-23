@@ -39,7 +39,7 @@ Notes :
 ## Penjelasan Kode Integrasi Romberg
 
 #### 1. Definisikan fungsi yang ingin diintegrasi dan batasannya
-Sebagai contoh gunakan `1 / (1 + x)` dengan batas integrasi `a = 0` sebagai batas bawah dan `b = 1` sebagai batas atas
+Sebagai contoh gunakan `1 / (1 + x)` dengan batas integrasi `a` sebagai batas bawah dan `b` sebagai batas atas
 
 ``` ruby
 double f(double x) {
@@ -47,9 +47,8 @@ double f(double x) {
   return 1 / (1 + x); // Contoh: integrasikan 1 / (1 + x) dari 0 hingga 1
 }
 
-double a = 0; // Batas bawah integrasi
-double b = 1; // Batas atas integrasi
-
+double a; // Batas bawah integrasi
+double b; // Batas atas integrasi
 ```
 
 #### 2. Tentukan array 2D untuk menyimpan hasil antara metode integrasi Romberg
@@ -96,9 +95,30 @@ for (int i = 2; i <= n; i++) {
 double result = R[n][n]; // Final result
 ```
 
-## Error Relative dan Percent Error
+## Error Relative
 
+Error relative dihitung dengan menggunakan persamaan berikut:
 
+<img width="270" alt="image" src="https://user-images.githubusercontent.com/89933907/209361818-0615c5eb-fb16-4d9c-b646-1522798ab3a6.png">
+
+Maka kita mendefinisikan variabel untuk real value
+
+```ruby
+double realValue; // Nilai real
+```
+
+Kemudian masukkan ke dalam fungsi `errRelative`
+
+```ruby
+double errRelative (double realValue, double measured)
+{
+	return (abs(measured-realValue))/realValue;
+}
+```
+
+`realValue` diperoleh dari `input user`, dan variabel `measured` diperoleh dari hasil integrasi `Romberg`
+
+## Percent Error
 
 ## Contoh Kasus
 
