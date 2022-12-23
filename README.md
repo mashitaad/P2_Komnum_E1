@@ -17,14 +17,28 @@ Formula Romberg pada umumnya adalah sebagai berikut:
 
 <img width="334" alt="image" src="https://user-images.githubusercontent.com/89933907/208550543-3e54606d-1e29-455b-9629-a931c807f794.png">
 
-dengan 
-$$ h = (b-1) /over (2^(i-1)^) $$ 
+dengan rumus h adalah :
 
-dimana a dan b sebagai batasan dan i adalah indeks baris
+![image](https://user-images.githubusercontent.com/114491445/209295987-3c53be78-ab98-4e82-b02f-6f95abfcd82e.png)
+
+serta rumus CTR adalah :
+
+![image](https://user-images.githubusercontent.com/114491445/209298898-db23ca08-4857-44d6-acbf-fb426a801912.png)
+
+
+Notes :
+- a dan b adalah batasan
+- i adalah indeks baris
+
+Lankah - langkah Formula Romberg :
+1. Cari nilai h
+2. Cari kolom pertama dari dua baris pertama menggunakan CTR
+3. Dapatkan kolom selanjutnya di dalam baris tersebut menggunakan Formula Romberg dengan i > 1
+4. Ulangi langkah satu sampai tiga setiap baris sampai mendapatkan solusi yang dibutuhkan
 
 ## Penjelasan Kode Integrasi Romberg
 
-### 1. Definisikan fungsi yang ingin diintegrasi yaitu `1 / (1 + x)` serta batas integrasi `a` sebagai batas bawah dan `b` sebagai batas atas
+#### 1. Definisikan fungsi yang ingin diintegrasi yaitu `1 / (1 + x)` serta batas integrasi `a` sebagai batas bawah dan `b` sebagai batas atas
 
 ``` Volt
 double f(double x) {
@@ -37,14 +51,14 @@ double b = 1; // Batas atas integrasi
 
 ```
 
-### 2. Tentukan array 2D untuk menyimpan hasil antara metode integrasi Romberg. Ukuran array harus sama dengan jumlah tingkat akurasi yang diinginkan + 1
+#### 2. Tentukan array 2D untuk menyimpan hasil antara metode integrasi Romberg. Ukuran array harus sama dengan jumlah tingkat akurasi yang diinginkan + 1
 
 ``` Volt
 const int n = 8; // Jumlah tingkat akurasi yang diinginkan
 double R[n+1][n+1]; // Array 2D untuk menyimpan hasil intermediate
 ```
 
-### 3. Inisialisasi array dengan hasil trapezoidal rule untuk setiap tingkat akurasi yang diinginkan. Aturan trapesium adalah metode sederhana untuk mendekati integral tertentu dari suatu fungsi yang didasarkan pada pembagian interval integrasi menjadi subinterval yang lebih kecil dan menggunakan trapesium yang dibentuk oleh fungsi dan sumbu x untuk mendekati luas di bawah kurva.
+#### 3. Inisialisasi array dengan hasil trapezoidal rule untuk setiap tingkat akurasi yang diinginkan. Aturan trapesium adalah metode sederhana untuk mendekati integral tertentu dari suatu fungsi yang didasarkan pada pembagian interval integrasi menjadi subinterval yang lebih kecil dan menggunakan trapesium yang dibentuk oleh fungsi dan sumbu x untuk mendekati luas di bawah kurva.
 
 ``` Volt
 // Inisialisasi array dengan hasil aturan trapezoidal
@@ -60,7 +74,7 @@ for (int j = 1; j <= pow(2, i - 1); j++) {
 R[i][1] = sum;
 ```
 
-### 4. Kita gunakan metode ekstrapolasi Richardson untuk meningkatkan akurasi integrasi. Metode ekstrapolasi Richardson adalah teknik untuk memperkirakan nilai suatu fungsi pada tingkat ketelitian yang lebih tinggi dengan menggunakan nilai fungsi pada tingkat ketelitian yang lebih rendah. 
+#### 4. Kita gunakan metode ekstrapolasi Richardson untuk meningkatkan akurasi integrasi. Metode ekstrapolasi Richardson adalah teknik untuk memperkirakan nilai suatu fungsi pada tingkat ketelitian yang lebih tinggi dengan menggunakan nilai fungsi pada tingkat ketelitian yang lebih rendah. 
 
 ``` Volt
 // Gunakan metode ekstrapolasi Richardson untuk meningkatkan akurasi
@@ -72,7 +86,7 @@ for (int i = 2; i <= n; i++) {
 }
 ```
 
-### 5. Hasil akhir akan disimpan dalam `R[n][n]`
+#### 5. Hasil akhir akan disimpan dalam `R[n][n]`
 
 ``` Volt
 double result = R[n][n]; // Final result
@@ -132,8 +146,7 @@ int main() {
 }
 
 ```
-
-### Hasil dari `1 / (1 + x)` dengan `batas atas = 1`, `batas bawah = 0`, dan `n = 8` adalah
+Hasil dari `1 / (1 + x)` dengan `batas atas = 1`, `batas bawah = 0`, dan `n = 8` adalah
 <p align="center">
 <img width="300" alt="image" src="https://user-images.githubusercontent.com/91377782/208889350-f5d11e8e-899b-4c6f-a274-f7588cc85f7c.png">
 </p>
