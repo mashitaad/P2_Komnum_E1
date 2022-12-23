@@ -104,10 +104,6 @@ Hasil dari `1 / (1 + x)` dengan `batas atas = 1`, `batas bawah = 0`, dan `n = 8`
 Diperoleh hasil dengan metode Romberg adalah `0.693147`
 
 ## Kesimpulan
-
-<p align="justify"> 
 Integrasi numerik merupakan perkiraan untuk `memperoleh hasil integral` dan sangat berguna untuk menghitung integral yang tidak dapat diselesaikan menggunakan formula spesial. Metode Romberg merupakan metode satu-satunya yang `menghilangkan error` melalui penggunaan ekstrapolasi Richardson. 
 
 Metode integrasi romberg adalah metode yang sangat efisien untuk mendekati integral tertentu dari suatu fungsi. Meskipun metode Simpson 1/3 mengungguli aturan trapesium komposit, `Romberg tetap lebih efisien` karena menerapkan dengan kokoh aturan trapesium komposit.
- </p>
-
