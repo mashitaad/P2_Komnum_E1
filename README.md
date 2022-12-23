@@ -40,7 +40,7 @@ Lankah - langkah Formula Romberg :
 
 #### 1. Definisikan fungsi yang ingin diintegrasi yaitu `1 / (1 + x)` serta batas integrasi `a` sebagai batas bawah dan `b` sebagai batas atas
 
-``` Volt
+``` ruby
 double f(double x) {
   // Definisi fungsi
   return 1/ (1 + x); // Contoh: integrasikan 1 / (1 + x) dari 0 hingga 1
@@ -53,14 +53,14 @@ double b = 1; // Batas atas integrasi
 
 #### 2. Tentukan array 2D untuk menyimpan hasil antara metode integrasi Romberg. Ukuran array harus sama dengan jumlah tingkat akurasi yang diinginkan + 1
 
-``` Volt
+``` ruby
 const int n = 8; // Jumlah tingkat akurasi yang diinginkan
 double R[n+1][n+1]; // Array 2D untuk menyimpan hasil intermediate
 ```
 
 #### 3. Inisialisasi array dengan hasil trapezoidal rule untuk setiap tingkat akurasi yang diinginkan. Aturan trapesium adalah metode sederhana untuk mendekati integral tertentu dari suatu fungsi yang didasarkan pada pembagian interval integrasi menjadi subinterval yang lebih kecil dan menggunakan trapesium yang dibentuk oleh fungsi dan sumbu x untuk mendekati luas di bawah kurva.
 
-``` Volt
+``` ruby
 // Inisialisasi array dengan hasil aturan trapezoidal
 for (int i = 1; i <= n; i++) {
   double h = (b - a) / pow(2, i - 1); // Lebar trapezoid
@@ -76,7 +76,7 @@ R[i][1] = sum;
 
 #### 4. Kita gunakan metode ekstrapolasi Richardson untuk meningkatkan akurasi integrasi. Metode ekstrapolasi Richardson adalah teknik untuk memperkirakan nilai suatu fungsi pada tingkat ketelitian yang lebih tinggi dengan menggunakan nilai fungsi pada tingkat ketelitian yang lebih rendah. 
 
-``` Volt
+``` ruby
 // Gunakan metode ekstrapolasi Richardson untuk meningkatkan akurasi
 for (int i = 2; i <= n; i++) {
   for (int j = 2; j <= i; j++) {
@@ -88,13 +88,13 @@ for (int i = 2; i <= n; i++) {
 
 #### 5. Hasil akhir akan disimpan dalam `R[n][n]`
 
-``` Volt
+``` ruby
 double result = R[n][n]; // Final result
 ```
 
 ## Complete code
 
-``` Volt
+``` ruby
 #include <cmath>
 #include <iostream>
 using namespace std;
