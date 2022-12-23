@@ -96,12 +96,29 @@ for (int i = 2; i <= n; i++) {
 double result = R[n][n]; // Final result
 ```
 
-Hasil dari `1 / (1 + x)` dengan `batas atas = 1`, `batas bawah = 0`, dan `n = 8` adalah
+## Error Relative dan Percent Error
+
+
+
+## Contoh Kasus
+
+Sebagai contoh kita masukkan batas bawah `a = 0`, batas atas `b = 1`, tingkat akurasi `n = 8`, dan real value `0.69315`
+
+<img width="168" alt="image" src="https://user-images.githubusercontent.com/89933907/209360076-bdb540d2-4da0-4f05-b162-f9bab534031e.png">
+
+Maka diperoleh hasil Romberg sebagai berikut:
+
 <p align="center">
 <img width="300" alt="image" src="https://user-images.githubusercontent.com/91377782/208889350-f5d11e8e-899b-4c6f-a274-f7588cc85f7c.png">
 </p>
 
 Diperoleh hasil dengan metode Romberg adalah `0.693147`
+
+Serta error relative dan percent error:
+
+<img width="149" alt="image" src="https://user-images.githubusercontent.com/89933907/209360483-66b7ee94-fe55-4015-9bda-f0ca80315525.png">
+
+Error relative sebesar `0.000004` dan percent error sebesar `0.000407%`
 
 ## Kesimpulan
 Integrasi numerik merupakan perkiraan untuk `memperoleh hasil integral` dan sangat berguna untuk menghitung integral yang tidak dapat diselesaikan menggunakan formula spesial. Metode Romberg merupakan metode satu-satunya yang `menghilangkan error` melalui penggunaan ekstrapolasi Richardson. 
