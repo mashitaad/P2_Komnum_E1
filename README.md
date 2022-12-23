@@ -99,7 +99,9 @@ double result = R[n][n]; // Final result
 
 Error relative dihitung dengan menggunakan persamaan berikut:
 
+<p align="center">
 <img width="270" alt="image" src="https://user-images.githubusercontent.com/89933907/209361818-0615c5eb-fb16-4d9c-b646-1522798ab3a6.png">
+</p>
 
 Maka kita mendefinisikan variabel untuk real value
 
@@ -119,6 +121,28 @@ double errRelative (double realValue, double measured)
 `realValue` diperoleh dari `input user`, dan variabel `measured` diperoleh dari hasil integrasi `Romberg`
 
 ## Percent Error
+
+Percent error diperoleh dengan menggunakan persamaan:
+<p align="center">
+<img width="281" alt="image" src="https://user-images.githubusercontent.com/89933907/209362454-46125467-18bf-4fee-98a1-30a11649c35c.png">
+</p>
+
+Oleh karena itu, kita perlu untuk menyimpan data dari error relative di dalam suatu variabel sebagai berikut:
+
+```ruby
+double _errRelative = errRelative(realValue, result);
+```
+
+Kemudian, masukkan ke dalam fungsi percent error
+
+```ruby
+double errPercent (double data)
+{
+	return data * 100;
+}
+```
+
+variabel `data` diperoleh dari variabel hasil error relative yaitu `_errRelative`
 
 ## Contoh Kasus
 
