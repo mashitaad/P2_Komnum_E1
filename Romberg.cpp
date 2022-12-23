@@ -65,6 +65,8 @@ int main() {
 	printf ("Masukkan real value:\n");
 	scanf ("%lf", &realValue);
 
+	printf ("\n");
+	
   	double result = romberg(a, b, n);
   	printf("Result: %f\n\n", result);
   	
