@@ -104,7 +104,10 @@ double result = R[n][n]; // Final result
 
 Sebagai contoh kita masukkan batas bawah `a = 0`, batas atas `b = 1`, tingkat akurasi `n = 8`, dan real value `0.69315`
 
-<img width="168" alt="image" src="https://user-images.githubusercontent.com/89933907/209360076-bdb540d2-4da0-4f05-b162-f9bab534031e.png">
+<p align="center">
+<img width="143" alt="image" src="https://user-images.githubusercontent.com/89933907/209360866-065d7e96-aded-4138-b549-08381ed91319.png">
+</p>
+
 
 Maka diperoleh hasil Romberg sebagai berikut:
 
@@ -116,11 +119,17 @@ Diperoleh hasil dengan metode Romberg adalah `0.693147`
 
 Serta error relative dan percent error:
 
-<img width="149" alt="image" src="https://user-images.githubusercontent.com/89933907/209360483-66b7ee94-fe55-4015-9bda-f0ca80315525.png">
+<p align="center">
+<img width="143" alt="image" src="https://user-images.githubusercontent.com/89933907/209360780-8da23019-ebbb-4f1d-bf1c-6978d16ba16e.png">
+</p>
 
 Error relative sebesar `0.000004` dan percent error sebesar `0.000407%`
 
 ## Kesimpulan
-Integrasi numerik merupakan perkiraan untuk `memperoleh hasil integral` dan sangat berguna untuk menghitung integral yang tidak dapat diselesaikan menggunakan formula spesial. Metode Romberg merupakan metode satu-satunya yang `menghilangkan error` melalui penggunaan ekstrapolasi Richardson. 
+<p align="justify">
+<Integrasi numerik merupakan perkiraan untuk `memperoleh hasil integral` dan sangat berguna untuk menghitung integral yang tidak dapat diselesaikan menggunakan formula spesial. Metode Romberg merupakan metode satu-satunya yang `menghilangkan error` melalui penggunaan ekstrapolasi Richardson. 
 
-Metode integrasi romberg adalah metode yang sangat efisien untuk mendekati integral tertentu dari suatu fungsi. Meskipun metode Simpson 1/3 mengungguli aturan trapesium komposit, `Romberg tetap lebih efisien` karena menerapkan dengan kokoh aturan trapesium komposit.
+Metode integrasi romberg adalah metode yang sangat efisien untuk mendekati integral tertentu dari suatu fungsi. Meskipun metode Simpson 1/3 mengungguli aturan trapesium komposit, `Romberg tetap lebih efisien` karena menerapkan dengan kokoh aturan trapesium komposit.">
+</p>
+
+
