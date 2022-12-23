@@ -37,13 +37,40 @@ double romberg(double a, double b, int n) {
 	return R[n][n];
 }
 
+double errRelative (double realValue, double measured)
+{
+	return (abs(measured-realValue))/realValue;
+}
+
+double errPercent (double data)
+{
+	return data * 100;
+}
+
 int main() {
-	double a = 0; // Batas bawah integrasi
-  	double b = 1; // Batas atas integrasi
-  	int n = 8; // Jumlah tingkat akurasi yang diinginkan
+	double a; // Batas bawah integrasi
+  	double b; // Batas atas integrasi
+  	int n; // Jumlah tingkat akurasi yang diinginkan
+	double realValue; // Nilai real
+
+	printf ("Masukkan batas bawah:\n");
+	scanf ("%lf", &a);
+
+	printf ("Masukkan batas atas:\n");
+	scanf ("%lf", &b);
+
+	printf ("Masukkan tingkat akurasi:\n");
+	scanf ("%d", &n);
+
+	printf ("Masukkan real value:\n");
+	scanf ("%lf", &realValue);
 
   	double result = romberg(a, b, n);
-  	printf("Result: %f\n", result);
+  	printf("Result: %f\n\n", result);
+  	
+	double _errRelative = errRelative(realValue, result);
+	printf("Error relative: %f\n", _errRelative);
+  	printf("Percent error: %f%%\n", errPercent(_errRelative));
   	
 	return 0;
 }
